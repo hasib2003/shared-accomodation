@@ -1,0 +1,10 @@
+#sideBar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 15%;
+    background: #9cd6ff;
+    
+    /* background: #000; */
+}

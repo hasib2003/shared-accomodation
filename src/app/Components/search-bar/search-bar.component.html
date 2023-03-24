@@ -1,0 +1,45 @@
+<nav class="navbar bg-body-tertiary container">
+
+    <div class="container">
+      <form class="d-flex my-3" role="search" (ngSubmit)="searchRequest()" >
+  
+        <select [(ngModel)] = "country" name="country" class="form-select mx-2 " aria-label="Default select example">
+          <option selected>Country</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+  
+        <select [(ngModel)] = "University" name="university" class="form-select mx-2 " aria-label="Default select example">
+          <option selected>University</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+
+        <select [(ngModel)] = "city" name="city" class="form-select mx-2 " aria-label="Default select example">
+          <option selected>City</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+  
+        <select [(ngModel)] = "maxTenants" name="maxTenants" class="form-select mx-2 " aria-label="Default select example">
+          <option selected>Max Tenants</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+  
+        <select [(ngModel)] = "priceRange" name="priceRange" class="form-select mx-2 " aria-label="Default select example">
+          <option selected>Price Range</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+  
+  
+        <button class="btn btn-outline-success" type="submit" >Search</button>
+      </form>
+    </div>
+  </nav>

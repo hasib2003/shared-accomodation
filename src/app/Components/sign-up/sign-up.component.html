@@ -1,0 +1,46 @@
+<app-header [mainLinks]="links"></app-header>
+<div class="container my-4">
+  <h2>
+    Sign Up
+  </h2>
+  <form (ngSubmit)="this.SignUpRequest()">
+
+    <div class="my-2 row">
+      <div class="col">
+        <input [(ngModel)]="this.User.firstName" name="firstName" type="text" class="form-control" placeholder="First name">
+      </div>
+      <div class="col">
+        <input [(ngModel)]="this.User.lastName" name="lastName" type="text" class="form-control" placeholder="Last name">
+      </div>
+    </div>
+    <div class="my-2 row">
+
+      <div class="form-group col-md-6">
+        <input [(ngModel)]="this.User.password" type="password" class="form-control" name="inputPassword4"
+          placeholder="Password" onChange="this.checkValidPassword()">
+        <small id="passHelp" class="form-text text-muted">Password should have atleat 8 characters, including 2
+          uppercase and 1 digit</small>
+
+      </div>
+      <div class="form-group col-md-6">
+        <input [(ngModel)]="this.confirmPass" type="password" class="form-control" name="inputPasswordConfirm"
+          placeholder="Confirm Password">
+      </div>
+    </div>
+
+    <div class="my-2 row">
+      <div class="form-group col-md-6">
+        <input [(ngModel)]="this.User.email" type="email" class="form-control" name="inputEmail4" placeholder="Email">
+      </div>
+    </div>
+
+
+
+    <button type="submit" class="my-2 btn btn-primary">Sign Up</button>
+
+
+
+
+
+  </form>
+</div>

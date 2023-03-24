@@ -1,0 +1,16 @@
+<nav class="navbar  navbar-expand-lg bg-body-tertiary" style="background-color: #9cd6ff;" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Shared Accomodation</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" *ngFor="let item of this.mainLinks" routerLink={{item.link}}>{{item.description}}</a>
+      </div>
+        <a *ngIf="this.loggedInStatus" routerLink = "/user/dashboard" class="nav-link mx-4">{{this.user}}</a>
+        <button *ngIf="this.loggedInStatus" class="btn btn-danger" (click)="this.logout()">Log out</button>
+    </div>
+  </div>
+</nav>

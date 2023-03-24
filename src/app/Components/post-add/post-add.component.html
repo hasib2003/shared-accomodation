@@ -1,0 +1,94 @@
+<app-header [mainLinks]="links"></app-header>
+<div class="container my-3">
+    <h3 *ngIf="!this.editMode">
+        Tell us about your available space
+    </h3>
+    <h3 *ngIf="this.editMode">
+        Let's Make it More Attractive
+    </h3>
+
+    <button *ngIf="editMode&&!allowEdition else editElse" (click)="RequestToEdit()"
+        class="my-2 btn btn-danger">Edit</button>
+
+    <ng-template #editElse>
+        <button (click)="requestToCloseEdit()" class="my-2 btn btn-secondary">Back</button>
+    </ng-template>
+
+    <form (ngSubmit)="this.postSpaceRequest()">
+
+        <div class="my-2 row">
+            <div class="col">
+                <input [(ngModel)]="this.title" name="title" type="text" class="form-control"
+                    placeholder="A suitable title" disabled={{!this.allowEdition}}>
+            </div>
+            <div class="col">
+                <input [(ngModel)]="this.rentPerMonth" name="rent" type="number" class="form-control"
+                    placeholder="Rent per month" disabled={{!this.allowEdition}}>
+            </div>
+        </div>
+        <div class="my-2 row">
+            <div class="form-group col-md-6">
+                <input [(ngModel)]="this.maxRequierd" type="number" class="form-control" name="maxRequierd"
+                    placeholder="Maximum tenants" disabled={{!this.allowEdition}}>
+            </div>
+            <div class="form-group col-md-6">
+                <input [(ngModel)]="this.currenltyPresent" type="number" class="form-control" name="currenltyPresent"
+                    placeholder="Current tenants" disabled={{!this.allowEdition}}>
+            </div>
+        </div>
+
+
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
+            placeholder="A nice short description for what you are looking" [(ngModel)]="this.description"
+            name="description" disabled={{!this.allowEdition}}></textarea>
+
+        <div class="form-group">
+            <input [(ngModel)]="this.address1" name="address1" type="text" class=" my-2 form-control" id="inputAddress"
+                placeholder="Address Line 1" disabled={{!this.allowEdition}}>
+        </div>
+        <div class="form-group">
+            <input [(ngModel)]="this.address2" name="address2" type="text" class=" my-2 form-control" id="inputAddress2"
+                placeholder="Address Line 2" disabled={{!this.allowEdition}}>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input [(ngModel)]="this.city" disabled={{!this.allowEdition}} name="city" type="text"
+                    class="form-control" id="inputCity">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <select [(ngModel)]="this.state" disabled={{!this.allowEdition}} name="state" id="inputState"
+                    class="form-control">
+                    <option selected>Choose...</option>
+                    <option value="punjab">punjab</option>
+                    <option value="sidh">sidh</option>
+                    <option value="nwfp">nwfp</option>
+                    <option value="balochistan">balochistan</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input [(ngModel)]="this.zipCode" disabled={{!this.allowEdition}} type="text" class="form-control"
+                    id="inputZip" name="inputZip">
+            </div>
+        </div>
+
+
+        <ng-template #postbtn>
+
+
+            <button type="submit" class="my-2 btn btn-primary">Post</button>
+        </ng-template>
+        <button *ngIf="editMode; else postbtn" type="submit" class="my-2 btn btn-success">Confirm Changes</button>
+
+
+
+
+
+
+    </form>
+
+</div>
+
+<Footer></Footer>

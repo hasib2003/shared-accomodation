@@ -1,0 +1,19 @@
+<app-post-add [editMode]="true" [currentSpace$]="this.space"></app-post-add>
+
+<h2 class="text-center">
+    Interests Shown By the People
+</h2>
+
+<div class="container" *ngFor="let interest of this.allInterests | async">
+    <app-manage-interest [interest]="interest"></app-manage-interest>
+</div>
+
+<div class="container" *ngIf="(this.allInterests| async)?.length ===0 ">
+
+    <h3 class="text-center">
+        No Interests Yet
+    </h3>
+    <h4 class="text-center">
+        You can always change the space info to attract more audience
+    </h4>
+</div>

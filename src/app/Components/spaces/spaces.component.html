@@ -1,0 +1,9 @@
+<app-header [mainLinks]="links"></app-header>
+
+<app-search-bar></app-search-bar>
+
+<div *ngFor="let spaceItem of allSpaces | async" class="container my-3">
+  <app-space-item [Item]="spaceItem" (BookSpace)="BookWithId($event)"></app-space-item>
+</div>
+
+<app-footer></app-footer>

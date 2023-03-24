@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "sharedacc-8a82d": {
+      "hosting": {
+        "my-app": [
+          "sharedacc-8a82d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "sharedacc-8a82d"
+  }
+}
